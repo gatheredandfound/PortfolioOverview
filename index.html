@@ -356,7 +356,21 @@ const data = {
         status:'In progress'
       }
     ],
-    amber: [],
+    amber: [
+      {
+        client:'AA Corporation',
+        project:'AI Roadmap Development Support',
+        category:'Risk',
+        title:'No presence within CDAIO at the AA',
+        description:'With Pete offboarding and no replacement being provided by G&F, we will lose all presence within the AA CDAIO.',
+        impact:'Reduces visibility for account growth.',
+        severity:'Medium',
+        owner:'Reanie',
+        raisedBy:'Pete',
+        actions:'Review account growth approach and identify alternative route into CDAIO.',
+        status:'Open'
+      }
+    ],
     green: [
       {
         client:'AA Corporation',
@@ -409,6 +423,32 @@ const data = {
         raisedBy:'Martin',
         actions:'Monitor extension and clarify budget position.',
         status:'In progress'
+      },
+      {
+        client:'AXA Health',
+        project:'Digital Transformation Programme',
+        category:'Risk',
+        title:'Tony Das rate increase',
+        description:'If Tony is extended he has confirmed he will only stay if there is an associated rate uplift.',
+        impact:'Reduces commercial margins for Gathered & Found.',
+        severity:'Low',
+        owner:'Chris',
+        raisedBy:'Tony',
+        actions:'Confirm extension commercial position and agree any required rate uplift internally.',
+        status:'Open'
+      },
+      {
+        client:'Freemarket FX',
+        project:'Platform Rebuild',
+        category:'Risk',
+        title:'Robert Butler rate increase',
+        description:'Rob has been given the tech lead position for this project, and wants a rate uplift because of this.',
+        impact:'Weakens commercials for Gathered & Found.',
+        severity:'Low',
+        owner:'Chris',
+        raisedBy:'Rob',
+        actions:'Review commercial impact of tech lead rate uplift and confirm position.',
+        status:'Open'
       }
     ]
   },
@@ -447,7 +487,7 @@ const data = {
       consultants: 1,
       expansion30: 0,
       red: 0,
-      amber: 0,
+      amber: 1,
       green: 0
     },
     {
@@ -490,7 +530,7 @@ const data = {
       expansion30: 0,
       red: 1,
       amber: 0,
-      green: 1
+      green: 2
     },
     {
       project: 'Mobile Application Development',
@@ -518,7 +558,7 @@ const data = {
       expansion30: 2,
       red: 0,
       amber: 0,
-      green: 1
+      green: 2
     },
     {
       project: 'Platform Security Uplift',
@@ -1100,12 +1140,13 @@ function runTests() {
   console.assert(typeof renderBudgetShare === 'function', 'renderBudgetShare should exist');
   console.assert(Array.isArray(getFilteredProjects()), 'Filtered projects should return an array');
   console.assert(data.risks.red.length === 1, 'Red risks should be 1');
-  console.assert(data.risks.amber.length === 0, 'Amber risks should be 0');
-  console.assert(data.risks.green.length === 4, 'Green risks should be 4');
-  console.assert(getProjectRisks('Digital Transformation Programme').length === 2, 'Digital Transformation Programme should have two linked risks');
-  console.assert(getProjectRisks('Platform Rebuild').length === 1, 'Platform Rebuild should have one linked risk');
+  console.assert(data.risks.amber.length === 1, 'Amber risks should be 1');
+  console.assert(data.risks.green.length === 6, 'Green risks should be 6');
+  console.assert(getProjectRisks('Digital Transformation Programme').length === 3, 'Digital Transformation Programme should have three linked risks');
+  console.assert(getProjectRisks('Platform Rebuild').length === 2, 'Platform Rebuild should have two linked risks');
   console.assert(getProjectRisks('Technology Operating Model Phase 2').length === 1, 'Technology Operating Model Phase 2 should have one linked risk');
   console.assert(getProjectRisks('Product Design Consultancy').length === 1, 'Product Design Consultancy should have one linked risk');
+  console.assert(getProjectRisks('AI Roadmap Development Support').length === 1, 'AI Roadmap Development Support should have one linked risk');
   console.assert(data.summary.committedSpend === 4065011, 'Committed spend should reflect updated active and completed project budgets');
   console.assert(data.summary.activeConsultants === 30, 'Active consultant total should be 30');
   console.assert(data.summary.expansion30 === 2, 'Expansion KPI should show 2');
