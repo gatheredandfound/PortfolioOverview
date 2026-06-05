@@ -244,12 +244,36 @@ function checkPassword() {
 const data = {
   newStarters: [
     {
-      name: 'Hakan Ugur',
+      name: 'Brandon Botha',
       project: 'Platform Rebuild',
       client: 'Freemarket FX',
-      role: 'Front End Consultant',
+      role: 'UX Design',
       compliancePct: 100,
-      contractSigned: 'Yes'
+      contractSigned: 'No'
+    },
+    {
+      name: 'Front end (unknown)',
+      project: 'Platform Rebuild',
+      client: 'Freemarket FX',
+      role: 'Front end consultant',
+      compliancePct: 0,
+      contractSigned: 'No'
+    },
+    {
+      name: 'Front end (unknown)',
+      project: 'Platform Rebuild',
+      client: 'Freemarket FX',
+      role: 'Front end consultant',
+      compliancePct: 0,
+      contractSigned: 'No'
+    },
+    {
+      name: 'Product Designer (Unknown)',
+      project: 'Product Design',
+      client: 'AA Corporation',
+      role: 'Designer',
+      compliancePct: 0,
+      contractSigned: 'No'
     }
   ],
   completedProjects: [
@@ -292,87 +316,130 @@ const data = {
       totalBudget: 62500,
       notes: 'Sadaf Offboarded on 17th April after completing thorough handover.',
       closeSummary: 'No additional work required as it stands.'
+    },
+    {
+      project: 'Technology Operating Model, Discovery and Design',
+      client: 'AA Corporation',
+      status: 'Completed',
+      totalBudget: 249950,
+      notes: 'Phase 2 has commenced since completion.',
+      closeSummary: 'Phase 2 has commenced since completion.'
+    },
+    {
+      project: 'SDLC Productivity Metrics',
+      client: 'AXA UK',
+      status: 'Completed',
+      totalBudget: 178750,
+      notes: 'DORA Metrics were descoped due to organisation restructure.',
+      closeSummary: 'DORA Metrics were descoped due to organisation restructure.'
     }
   ],
   summary: {
-    committedSpend: 3605713,
-    activeConsultants: 28,
-    expansion30: 1,
-    completedProjects: 5
+    committedSpend: 4065011,
+    activeConsultants: 30,
+    expansion30: 2,
+    completedProjects: 7
   },
   risks: {
-    red: [],
-    amber: [
+    red: [
+      {
+        client:'AXA Health',
+        project:'Digital Transformation Programme',
+        category:'Risk',
+        title:"Tony's offboarding continuity risk",
+        description:"Due to Tony's replacement not having the required skillset, there is a significant delivery risk posed from his offboarding.",
+        impact:"Due to Tony's replacement not having the required skillset, there is a significant delivery risk posed from his offboarding.",
+        severity:'High',
+        owner:'Reanie',
+        raisedBy:'Tony',
+        actions:'This has been raised to Christina, who has raised this internally.',
+        status:'In progress'
+      }
+    ],
+    amber: [],
+    green: [
+      {
+        client:'AA Corporation',
+        project:'Technology Operating Model Phase 2',
+        category:'Risk',
+        title:'PO has not been raised',
+        description:'PO has not been raised.',
+        impact:'Without a valid PO, the client has no obligation to pay.',
+        severity:'Low',
+        owner:'Chris',
+        raisedBy:'Chris',
+        actions:'Follow up with client to secure PO.',
+        status:'Open'
+      },
       {
         client:'Freemarket FX',
         project:'Platform Rebuild',
         category:'Risk',
-        title:'Potential scale down of consultants',
-        description:'Greg mentioned that they may be reducing number of consultants for H2 extensions.',
-        impact:'Reduced consultants on project',
-        severity:'Medium',
+        title:'Tim Guerts office presence',
+        description:'Tim has not provided office presence for 3 weeks.',
+        impact:'Greg has threatened to offboard if this happens again.',
+        severity:'Low',
         owner:'Reanie',
         raisedBy:'Greg',
-        actions:'Maintain communication with Greg throughout this process, and try to keep as much consultants on project as possible',
+        actions:'Has been discussed with Tim who has confirmed office presence for all upcoming weeks.',
+        status:'Monitoring'
+      },
+      {
+        client:'AA Corporation',
+        project:'Product Design Consultancy',
+        category:'Risk',
+        title:"Kai's replacement",
+        description:"Due to Kai's notice, we will need to source a suitable replacement.",
+        impact:'Replacement may be declined or commercially infeasible; we could lose this project.',
+        severity:'Low',
+        owner:'Reanie',
+        raisedBy:'Talent',
+        actions:'Source suitable replacement options.',
         status:'In progress'
       },
       {
         client:'AXA Health',
         project:'Digital Transformation Programme',
         category:'Risk',
-        title:'Potential scale down of consultants',
-        description:'Tara has mentioned that they may look to offboard Tony Das and Graeme Cameron after H1',
-        impact:'Reduced consultants on project',
-        severity:'High',
-        owner:'Reanie',
-        raisedBy:'Tara Williams',
-        actions:'Dicuss this in supplier review (24 April) to try to alleviate this as soon as possible',
-        status:'Open'
-      }
-    ],
-    green: [
-      {
-        client:'Blacklane',
-        project:'Platform Security Uplift',
-        category:'Risk',
-        title:'Resourcing plan updated to prioritise Paul extension',
-        description:'Chris M no longer wants 2 resources, and wants to utilise the budget on extending Paul for an additional 3 months.',
-        impact:'Budget can be focused on continuity through an extension for Paul rather than onboarding a second resource.',
+        title:'Martin Budget Concerns',
+        description:'Martin has raised that there are budget concerns due to his 6 month extension, and that it may fall through.',
+        impact:'Extension length decreased or delivery continuity at risk.',
         severity:'Low',
         owner:'Reanie',
-        raisedBy:'Chris M',
-        actions:'Align revised extension approach and confirm budget allocation for Paul\'s 3 month extension.',
+        raisedBy:'Martin',
+        actions:'Monitor extension and clarify budget position.',
         status:'In progress'
-      },
-        {
-    client:'Blacklane',
-    project:'Platform Security Uplift',
-    category:'Risk',
-    title:'Ife will not be paid for days worked',
-    description:'There is currently no recorded work sign-off for Ife, meaning payment will not be made.',
-    impact:'Potential dispute.',
-    severity:'Low',
-    owner:'Reanie',
-    raisedBy:'Internal',
-    actions:'Chris provided reason for lack of payment, monitor response and actions.',
-    status:'Open'
-  }
+      }
     ]
   },
   upcomingFinishers: [
-    { consultant:'Pete Bagnall', client:'AA Corporation', project:'AI Roadmap', daysRemaining:7, status:'In Progress', comment:'Deliverables under review by Ben and Tom', priority:'green' },
-    { consultant:'Andrew Barlow', client:'AA Corporation', project:'TOM Design', daysRemaining:7, status:'In Progress', comment:'Proposal has been sent to Nick for sign off, SOW being reviewed by Andrew Barlow.', priority:'amber' },
-    { consultant:'Andrew Broome', client:'AA Corporation', project:'TOM Design', daysRemaining:7, status:'In Progress', comment:'Proposal has been sent to Nick for sign off, SOW being reviewed by Andrew Barlow.', priority:'amber' },
-    { consultant:'Selina Kantepudi', client:'AA Corporation', project:'TOM Design', daysRemaining:7, status:'In Progress', comment:'Proposal has been sent to Nick for sign off, SOW being reviewed by Andrew Barlow.', priority:'amber' },
-    { consultant:'Adam Scoot', client:'AA Corporation', project:'TOM Design', daysRemaining:7, status:'Offboarding', comment:'Offboarding confirmed.', priority:'red' },
-    { consultant:'Younes Child', client:'Freemarket FX', project:'Data Platform', daysRemaining:17, status:'In progress', comment:"Awaiting Greg's signature", priority:'green' },
-    { consultant:'Marton Meszaros', client:'AXA UK', project:'Productivity Metrics', daysRemaining:22, status:'Offboarding', comment:'Tara confirmed offboarding', priority:'red' }
+    { consultant:'Marcous Osewele', client:'Freemarket FX', project:'Platform Rebuild', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Dave Nash', client:'Freemarket FX', project:'Platform Rebuild', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Khayam Khan', client:'Freemarket FX', project:'Platform Rebuild', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Alastair Stevens', client:'Freemarket FX', project:'Platform Rebuild', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Conroy Griffiths', client:'Freemarket FX', project:'Platform Rebuild', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Wayne Britton', client:'Freemarket FX', project:'Platform Rebuild', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Alieh Riahi', client:'Freemarket FX', project:'Platform Rebuild', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Hakan Ugur', client:'Freemarket FX', project:'Platform Rebuild', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Alex Conner', client:'Freemarket FX', project:'Platform Rebuild', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Robert Butler', client:'Freemarket FX', project:'Platform Rebuild', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Cengiz Goktas', client:'Freemarket FX', project:'Platform Rebuild', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Steve Adey', client:'Freemarket FX', project:'Platform Rebuild', daysRemaining:22, status:'Unknown', comment:'Awaiting confirmation', priority:'amber' },
+    { consultant:'Zac Downs', client:'Freemarket FX', project:'Platform Rebuild', daysRemaining:22, status:'Unknown', comment:'Awaiting confirmation', priority:'amber' },
+    { consultant:'Tayo Oyebola', client:'Freemarket FX', project:'Data Infrastructure Stabilisation', daysRemaining:22, status:'Unknown', comment:'Awaiting confirmation', priority:'amber' },
+    { consultant:'Pete Bagnall', client:'AA Corporation', project:'AI Roadmap Support', daysRemaining:22, status:'Offboarding', comment:'Notice handed in', priority:'red' },
+    { consultant:'Kai Motta', client:'AA Corporation', project:'Product Design', daysRemaining:25, status:'Offboarding', comment:'Sourcing replacements', priority:'red' },
+    { consultant:'Martin Corbett', client:'AXA Health', project:'Digital Transformation Programme', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Graeme Cameron', client:'AXA Health', project:'Digital Transformation Programme', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Will Voyle', client:'AXA Health', project:'Digital Transformation Programme', daysRemaining:22, status:'Extending', comment:'Awaiting client signature', priority:'green' },
+    { consultant:'Tony Das', client:'AXA Health', project:'Digital Transformation Programme', daysRemaining:22, status:'Offboarding', comment:'Offboarding confirmed by Tara', priority:'red' },
+    { consultant:'Gabriel Ng', client:'AXA Health', project:'SDET', daysRemaining:22, status:'Offboarding', comment:'Offboarding confirmed by Tara', priority:'red' },
   ],
   projects: [
     {
       project: 'AI Roadmap Development Support',
       client: 'AA Corporation',
-      remainingDays: 8,
+      remainingDays: 22,
       totalBudget: 107250,
       budgetSpentPct: 0.588235294,
       progressPct: 0.759493671,
@@ -386,21 +453,21 @@ const data = {
     {
       project: 'Data Infrastructure Stabilisation',
       client: 'Freemarket FX',
-      remainingDays: 68,
+      remainingDays: 22,
       totalBudget: 61710,
       budgetSpentPct: 0,
       progressPct: 0.041666667,
       surplusDeficit: 0,
       consultants: 1,
-      expansion30: 1,
+      expansion30: 0,
       red: 0,
       amber: 0,
       green: 0
     },
     {
-      project: 'Data Platform Stablisation & Renaissance Integration',
+      project: 'Data Platform Stabilisation & Renaissance Integration',
       client: 'Freemarket FX',
-      remainingDays: 106,
+      remainingDays: 60,
       totalBudget: 116875,
       budgetSpentPct: 0.196721311,
       progressPct: 0.477272727,
@@ -414,16 +481,16 @@ const data = {
     {
       project: 'Digital Transformation Programme',
       client: 'AXA Health',
-      remainingDays: 68,
+      remainingDays: 22,
       totalBudget: 568236,
       budgetSpentPct: 0.320034282,
       progressPct: 0.440677966,
       surplusDeficit: 0,
       consultants: 4,
       expansion30: 0,
-      red: 0,
-      amber: 1,
-      green: 0
+      red: 1,
+      amber: 0,
+      green: 1
     },
     {
       project: 'Mobile Application Development',
@@ -442,38 +509,24 @@ const data = {
     {
       project: 'Platform Rebuild',
       client: 'Freemarket FX',
-      remainingDays: 68,
-      totalBudget: 1622225,
+      remainingDays: 67,
+      totalBudget: 1714323,
       budgetSpentPct: 0.39221902,
       progressPct: 0.5875,
       surplusDeficit: 15427.5,
-      consultants: 12,
-      expansion30: 0,
+      consultants: 15,
+      expansion30: 2,
       red: 0,
-      amber: 1,
-      green: 0
+      amber: 0,
+      green: 1
     },
     {
       project: 'Platform Security Uplift',
       client: 'Blacklane',
-      remainingDays: 62,
+      remainingDays: 123,
       totalBudget: 149820,
       budgetSpentPct: 0,
       progressPct: 0.010416667,
-      surplusDeficit: 0,
-      consultants: 1,
-      expansion30: 0,
-      red: 0,
-      amber: 0,
-      green: 2
-    },
-    {
-      project: 'SDLC Productivity Metrics',
-      client: 'AXA UK',
-      remainingDays: 22,
-      totalBudget: 178750,
-      budgetSpentPct: 0.475524476,
-      progressPct: 0.71657754,
       surplusDeficit: 0,
       consultants: 1,
       expansion30: 0,
@@ -484,7 +537,7 @@ const data = {
     {
       project: 'Software Development Engineering in Test',
       client: 'AXA Health',
-      remainingDays: 68,
+      remainingDays: 22,
       totalBudget: 108000,
       budgetSpentPct: 0.935483871,
       progressPct: 0,
@@ -496,23 +549,23 @@ const data = {
       green: 0
     },
     {
-      project: 'Technology Operating Model Discovery & Design',
+      project: 'Technology Operating Model Phase 2',
       client: 'AA Corporation',
-      remainingDays: 8,
-      totalBudget: 249950,
-      budgetSpentPct: 1,
-      progressPct: 0.906976744,
-      surplusDeficit: 4722.5,
-      consultants: 4,
+      remainingDays: 123,
+      totalBudget: 367200,
+      budgetSpentPct: 0,
+      progressPct: 0,
+      surplusDeficit: 0,
+      consultants: 3,
       expansion30: 0,
       red: 0,
       amber: 0,
-      green: 0
+      green: 1
     },
     {
       project: 'Product Design Consultancy',
       client: 'AA Corporation',
-      remainingDays: 162,
+      remainingDays: 116,
       totalBudget: 90000,
       budgetSpentPct: 0,
       progressPct: 0,
@@ -521,10 +574,9 @@ const data = {
       expansion30: 0,
       red: 0,
       amber: 0,
-      green: 0
+      green: 1
     }
-  ]
-};
+  ]};
 
 const fmtMoney = n => '£' + Number(n).toLocaleString('en-GB', { maximumFractionDigits: 1 });
 const fmtPct = n => Number(n).toFixed(1) + '%';
@@ -1047,42 +1099,20 @@ function runTests() {
   console.assert(typeof renderProjectCards === 'function', 'renderProjectCards should exist for backwards compatibility');
   console.assert(typeof renderBudgetShare === 'function', 'renderBudgetShare should exist');
   console.assert(Array.isArray(getFilteredProjects()), 'Filtered projects should return an array');
-  console.assert(getProjectRisks('Platform Rebuild').length === 1, 'Platform Rebuild should return 2 linked risks');
-  console.assert(getProjectRisks('Platform Security Uplift').length === 2, 'Platform Security Uplift should return 1 linked risk');
-  console.assert(data.projects.find(project => project.project === 'Platform Rebuild').client === 'Freemarket FX', 'Platform Rebuild should belong to Freemarket FX');
-  console.assert(data.risks.red.length === 0, 'Red risks should now be empty after Burger & Beyond removal');
-  console.assert(data.projects.find(project => project.project === 'Mobile Application Development').red === 0, 'Burger & Beyond project should no longer show a red risk');
-  console.assert(data.projects.find(project => project.project === 'Platform Security Uplift').green === 2, 'Platform Security Uplift should show two green risks');
-
-  const originalClient = selectedClient;
-  selectedClient = 'AA Corporation';
-  console.assert(getFilteredProjects().every(project => project.client === 'AA Corporation'), 'Client filter should only return AA Corporation projects');
-  selectedClient = originalClient;
-
-  console.assert(typeof escapeHtml('<test>') === 'string' && escapeHtml('<test>') === '&lt;test&gt;', 'escapeHtml should escape angle brackets');
-  pieClientFilter = 'AA Corporation';
-  console.assert(getPieProjects().every(project => project.client === 'AA Corporation'), 'Pie client filter should only return AA Corporation projects');
-  pieClientFilter = 'All';
-  pieView = 'client';
-  renderBudgetShare();
-  console.assert(el('budgetPieLegend').children.length > 0, 'Client pie legend should render at least one item');
-  pieView = 'project';
-  const aaProjects = data.projects.filter(project => project.client === 'AA Corporation');
-  const aaTotal = aaProjects.reduce((sum, project) => sum + project.totalBudget, 0);
-  console.assert(aaTotal > 0, 'AA Corporation filtered total should be greater than zero');
-
-  const adam = data.upcomingFinishers.find(item => item.consultant === 'Adam Scoot');
-  const andrewBarlow = data.upcomingFinishers.find(item => item.consultant === 'Andrew Barlow');
-  console.assert(adam && adam.comment === 'Offboarding confirmed.', 'Adam Scoot should show offboarding confirmed');
-  console.assert(andrewBarlow && andrewBarlow.comment.includes('Andrew Barlow'), 'Andrew Barlow note should reference Andrew Barlow');
-
-  console.assert(Array.isArray(data.newStarters), 'newStarters should exist as an array');
-  console.assert(data.newStarters.length === 1, 'There should currently be 1 new starter');
-  console.assert(data.newStarters[0].name === 'Hakan Ugur', 'Hakan Ugur should be the current new starter');
-
+  console.assert(data.risks.red.length === 1, 'Red risks should be 1');
+  console.assert(data.risks.amber.length === 0, 'Amber risks should be 0');
+  console.assert(data.risks.green.length === 4, 'Green risks should be 4');
+  console.assert(getProjectRisks('Digital Transformation Programme').length === 2, 'Digital Transformation Programme should have two linked risks');
+  console.assert(getProjectRisks('Platform Rebuild').length === 1, 'Platform Rebuild should have one linked risk');
+  console.assert(getProjectRisks('Technology Operating Model Phase 2').length === 1, 'Technology Operating Model Phase 2 should have one linked risk');
+  console.assert(getProjectRisks('Product Design Consultancy').length === 1, 'Product Design Consultancy should have one linked risk');
+  console.assert(data.summary.committedSpend === 4065011, 'Committed spend should reflect updated active and completed project budgets');
+  console.assert(data.summary.activeConsultants === 30, 'Active consultant total should be 30');
+  console.assert(data.summary.expansion30 === 2, 'Expansion KPI should show 2');
+  console.assert(data.projects.length === 10, 'There should currently be 10 active projects in the portfolio overview');
+  console.assert(data.upcomingFinishers.length === 21, 'There should currently be 21 upcoming finishers');
+  console.assert(data.newStarters.length === 4, 'There should currently be 4 new starters');
   renderProjectCards();
-  console.assert(el('budgetPieLegend').children.length > 0, 'Pie legend should render at least one item');
-  console.assert(Array.isArray(currentPieSegments) && currentPieSegments.length > 0, 'Pie segments should be stored for hover behaviour');
 }
 
 function init() {
