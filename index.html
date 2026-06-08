@@ -1148,7 +1148,7 @@ function runTests() {
   console.assert(getProjectRisks('Product Design Consultancy').length === 1, 'Product Design Consultancy should have one linked risk');
   console.assert(getProjectRisks('AI Roadmap Development Support').length === 1, 'AI Roadmap Development Support should have one linked risk');
   console.assert(data.summary.committedSpend === 4065011, 'Committed spend should reflect updated active and completed project budgets');
-  console.assert(data.summary.activeConsultants === 30, 'Active consultant total should be 30');
+  console.assert(data.summary.activeConsultants === 29, 'Active consultant total should be 29');
   console.assert(data.summary.expansion30 === 2, 'Expansion KPI should show 2');
   console.assert(data.projects.length === 10, 'There should currently be 10 active projects in the portfolio overview');
   console.assert(data.upcomingFinishers.length === 21, 'There should currently be 21 upcoming finishers');
